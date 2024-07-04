@@ -35,7 +35,7 @@ export default function Home() {
   const [amount, setAmount] = useState<string>("");
   const [raccount, setRaccount] = useState<string>("");
   const [slippage, setSlippage] = useState<string>("");
-  const [jsonData, setJsonData] = useState<object>();
+  const [jsonData, setJsonData] = useState<any>();
   const [quote, setQuote] = useState<boolean>(true);
   const [tx, setTx] = useState<boolean>(true);
   const [res, setRes] = useState<String>("Awaiting for JSON responce...");
