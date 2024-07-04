@@ -9,8 +9,9 @@ import {
 import { Token } from "./types/types";
 import TokenCard from "./components/TokenCard";
 import Connector from "./components/Connector";
-import ReactJson from "react-json-view";
+// import ReactJson from "react-json-view";
 import Image from "next/image";
+import dynamic from 'next/dynamic';
 
 const jsonBoxStyle = {
   height: "100%",
@@ -19,6 +20,8 @@ const jsonBoxStyle = {
   backgroundColor: "#1e2023",
   padding: "16px",
 };
+
+const DynamicReactJson = dynamic(() => import('react-json-view'), { ssr: false });
 
 export default function Home() {
   const [tokens, setTokens] = useState<Token[]>([]);
@@ -275,7 +278,7 @@ export default function Home() {
       <div className="px-10">
         <div className="h-[700px]">
           {jsonData ? (
-            <ReactJson
+            <DynamicReactJson
               src={jsonData}
               name={false}
               theme="google"

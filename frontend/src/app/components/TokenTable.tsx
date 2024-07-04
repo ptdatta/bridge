@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { TokenTableProps } from "../types/types";
+import Image from 'next/image';
 
 const TokenTable: React.FC<TokenTableProps> = ({ data, page, rowsPerPage, total, onPageChange, onRowsPerPageChange,selectToken }) => {
   const headers = [
@@ -39,7 +40,7 @@ const TokenTable: React.FC<TokenTableProps> = ({ data, page, rowsPerPage, total,
           {data.map((token) => (
             <tr key={token.address} onClick={()=>selectToken(token)} className='border-gray-600 text-white border-b cursor-pointer hover:bg-white hover:text-black'>
               <td className="px-4 py-2">
-                <img src={token.logoURI} alt={token.symbol} className="w-8 h-8" />
+                <Image src={token.logoURI} alt={token.symbol} height={40} width={40} />
               </td>
               <td className="px-4 py-2">{token.symbol}</td>
               <td className="px-4 py-2">{token.name}</td>
