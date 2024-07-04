@@ -8,11 +8,12 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT;
 
-app.use(cors<Request>({
-  origin:["https://bridgefrontend-ptdattas-projects.vercel.app"],
-  methods: ["POST","GET"],
+app.use(cors({
+  origin: ["https://bridgefrontend-fdksigex9-ptdattas-projects.vercel.app"],
+  methods: ["GET", "POST"],
   credentials: true
 }));
+
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
