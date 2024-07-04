@@ -9,7 +9,7 @@ const app: Express = express();
 const port = process.env.PORT;
 
 app.use(cors({
-  origin: ["https://bridgefrontend-fdksigex9-ptdattas-projects.vercel.app"],
+  origin: '*',
   methods: ["GET", "POST"],
   credentials: true
 }));
